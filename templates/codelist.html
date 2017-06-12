@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>codelist</title>
+	<link rel="STYLESHEET" type="text/CSS" href="assets/style.css">
+	<script language="javascript" type="text/javascript">
+	<!--
+	function httpGet(theUrl)
+	{
+	    var xmlHttp = new XMLHttpRequest();
+	    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	    xmlHttp.send( null );
+	}
+	-->
+	</script> 
+</head>
+<body>
+	<ul>
+	{{range $i, $e := .Commands}}
+		<li><a onClick="httpGet('/keypress/{{$i}}')">{{$i}}</a></li>
+	{{end}}
+	</ul>
+</body>
+</html>
