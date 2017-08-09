@@ -1,0 +1,95 @@
+body {
+    font-family: $font-stack;
+    color: $primary-color;
+    padding: $page-padding;
+}
+
+button {
+    @include border-radius(10px);
+    background-color: white; 
+
+    border:1px solid black;
+    text-align:center; 
+    width: 80px;
+    height: 50px;
+}
+
+table {
+    // border:1px solid black;
+    
+}
+
+.outtable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#volbutton {
+    border: none;
+    width: 100px;
+    height: 100px;
+}
+
+.voldown {
+    background: url($voldown);
+}
+
+.volup {
+    background: url($volup);
+}
+
+button { 
+    border:1px solid $primary-color,;
+    text-align:center; 
+    width: 80px;
+    height: 50px;
+}
+
+.numbutton {
+    @include border-radius( $numbuttonsize / 2 );
+    margin: 30px;
+    height:$numbuttonsize;
+    width: $numbuttonsize;
+    font-size: 1.5em;
+    background-color: lighten($primary-color, 90%);
+}
+
+
+button:active {
+    color: white;
+    background-color: black;
+}
+
+
+td {
+    @include centerall();
+}
+
+tr {
+    @include centerall();
+}
+
+.center {
+    text-align: center
+    padding
+}
+
+.abutton {
+    background-color: white 
+
+}
+
+.abutton:active {
+    background-color: black
+
+}
+
+#arrbutton {
+    @include border-radius( $numbuttonsize / 2 );
+    margin: 30px;
+    height:$numbuttonsize;
+    width: $numbuttonsize;
+    font-size: 1.5em;
+    background-color: lighten($primary-color, 90%);
+}
+

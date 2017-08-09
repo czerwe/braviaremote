@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BraviaRemote</title>
+    <!-- <link rel="STYLESHEET" type="text/CSS" href="assets/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+<!--    <style type="text/css">
+        button { 
+            border:1px solid black;
+            text-align:center; 
+            width: 80px;
+            height: 50px;
+        }
+
+        .numbutton {
+            height:80px;
+            width: 98px;
+            font-size: 1.5em;
+        }
+
+
+        #widebutton {
+            width: 150px;
+        }
+
+        button:active {
+            color: white;
+            background-color: black;
+        }
+
+        .center {
+            text-align: center
+            padding
+        }
+
+        .red {
+            background-color: red
+        }
+
+        .green {
+            background-color: green
+        }
+
+    </style> -->
+    <script language="javascript" type="text/javascript">
+    <!--
+    function httpGet(theUrl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+        xmlHttp.send( null );
+    }
+    -->
+    </script>
+</head>
+<body>
+<table border=0>
+    <tr>
+        <td style="padding-bottom: 20px">
+            <button id='widebutton' class="green" onClick="httpGet('/keypress/wake')">PowerOn</button>
+        </td>
+        <td style="padding-bottom: 20px">
+            <button id='widebutton' class="red" onClick="httpGet('/keypress/poweroff')">PowerOff</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-bottom: 20px">
+            <button id='widebutton' onClick="httpGet('/keypress/volumeup')">lauter</button>
+        </td>
+        <td style="padding-bottom: 20px">
+            <button id='widebutton' onClick="httpGet('/keypress/volumedown')">Leiser</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="center">
+            <table>
+                <tr>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num1')">1</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num2')">2</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num3')">3</button></td>
+                </tr>
+                <tr>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num4')">4</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num5')">5</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num6')">6</button></td>
+                </tr>
+                <tr>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num7')">7</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num8')">8</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num9')">9</button></td>
+                </tr>
+
+                <tr>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num0')">0</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num11')">11</button></td>
+                    <td><button class='numbutton' onClick="httpGet('/keypress/num12')">12</button></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="center">
+            <table>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    <button onClick="httpGet('/keypress/up')">Up</button>
+                    </td>
+                    <td>
+                    </td>   
+                </tr>
+                <tr>
+                    <td>
+                    <button onClick="httpGet('/keypress/left')">Left</button>
+                    </td>
+                    <td>
+                    <button onClick="httpGet('/keypress/confirm')">confirm</button>
+                    </td>
+                    <td>
+                    <button onClick="httpGet('/keypress/right')">Right</button>
+                    </td>   
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    <button onClick="httpGet('/keypress/down')">Down</button>
+                    </td>
+                    <td>
+                    </td>   
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

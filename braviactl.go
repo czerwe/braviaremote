@@ -11,6 +11,7 @@ import (
 	"html/template"
 	"net/http"
 	"os"
+	// "strings"
 )
 
 type Options struct {
@@ -74,6 +75,7 @@ func main() {
 	r.HandleFunc("/remote", Remote)
 	r.HandleFunc("/keypress/{key:[A-Za-z0-9]*}", Keypress)
 	r.HandleFunc("/macro/{key:[A-Za-z0-9]*}", Macro)
+	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
 
 	// r.HandleFunc("/temperature/{sensortype:[A-Za-z\\-]+}.{serial:[A-Z0-9]+}:{channel:[0-9]}.{type:[A-Z]+}/{value}", KlimaHandler)
 	// r.HandleFunc("/query/{measurement:[A-Za-z]+}/{room:[A-Za-z]+}", ccuprocessing.QueryHandler)
@@ -127,6 +129,14 @@ func Remote(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
+
+// func Root(w http.ResponseWriter, req *http.Request) {
+// 	if strings.Contains(r.URL.Path, ".") {
+// 		http.ServeHTTP(w, r)
+// 	} else {
+// 		fmt.Fprintf(w, "HomeHandler")
+// 	}
+// }
 
 func Keypress(w http.ResponseWriter, req *http.Request) {
 	vars := mux.Vars(req)

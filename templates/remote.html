@@ -2,76 +2,43 @@
 <html>
 <head>
 	<title>BraviaRemote</title>
-	<!-- <link rel="STYLESHEET" type="text/CSS" href="assets/style.css"> -->
-	<style type="text/css">
-		button { 
-			border:1px solid black;
-			text-align:center; 
-			width: 80px;
-			height: 50px;
-		}
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
 
-		.numbutton {
-			height:80px;
-			width: 98px;
-			font-size: 1.5em;
-		}
-
-
-		#widebutton {
-			width: 150px;
-		}
-
-		button:active {
-			color: white;
-			background-color: black;
-		}
-
-		.center {
-			text-align: center
-			padding
-		}
-
-		.red {
-			background-color: red
-		}
-
-		.green {
-			background-color: green
-		}
-
-	</style>
 	<script language="javascript" type="text/javascript">
 	<!--
 	function httpGet(theUrl)
 	{
 	    var xmlHttp = new XMLHttpRequest();
-	    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	    xmlHttp.open( "GET", theUrl, false );
 	    xmlHttp.send( null );
 	}
 	-->
 	</script>
 </head>
 <body>
-<table border=0>
+<table border=0 class='outtable'>
 	<tr>
 		<td style="padding-bottom: 20px">
-			<button id='widebutton' class="green" onClick="httpGet('/keypress/wake')">PowerOn</button>
+			<!-- <button id='widebutton' class="green" onClick="httpGet('/keypress/wake')">PowerOn</button> -->
+			<img class='abutton' src="/assets/icons8-Play-104.png" onClick="httpGet('/keypress/wake')">
 		</td>
 		<td style="padding-bottom: 20px">
-			<button id='widebutton' class="red" onClick="httpGet('/keypress/poweroff')">PowerOff</button>
+			<img class='abutton' src="/assets/icons8-Shutdown-104.png" onClick="httpGet('/keypress/poweroff')">
+			<!-- <button id='widebutton' class="red" onClick="httpGet('/keypress/poweroff')">PowerOff</button> -->
 		</td>
 	</tr>
 	<tr>
 		<td style="padding-bottom: 20px">
-			<button id='widebutton' onClick="httpGet('/keypress/volumeup')">lauter</button>
+			<img class='abutton' src="/assets/icons8-LowVolume-96.png" onClick="httpGet('/keypress/volumedown')">
+			<!-- <button id='volbutton' class='voldown' onClick="httpGet('/keypress/volumedown')"></button> -->
 		</td>
 		<td style="padding-bottom: 20px">
-			<button id='widebutton' onClick="httpGet('/keypress/volumedown')">Leiser</button>
+			<img class='abutton' src="/assets/icons8-Speaker-96.png" onClick="httpGet('/keypress/volumeup')">
+			<!-- <button id='volbutton' class='volup' onClick="httpGet('/keypress/volumeup')"></button> -->
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2" class="center">
+		<td colspan="2">
 			<table>
 				<tr>
 					<td><button class='numbutton' onClick="httpGet('/keypress/num1')">1</button></td>
@@ -98,33 +65,33 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2" class="center">
-			<table>
+		<td colspan="2">
+			<table class='outtable'>
 				<tr>
 					<td>
 					</td>
-					<td>
-					<button onClick="httpGet('/keypress/up')">Up</button>
+					<td class='centerall'>
+					<img class='abutton' src="/assets/icons8-CollapseArrow-100.png" onClick="httpGet('/keypress/up')">
 					</td>
 					<td>
 					</td>	
 				</tr>
 				<tr>
-					<td>
-					<button onClick="httpGet('/keypress/left')">Left</button>
+					<td class='centerall'>
+					<img class='abutton' src="/assets/icons8-Back-100.png" onClick="httpGet('/keypress/left')">
 					</td>
-					<td>
-					<button onClick="httpGet('/keypress/confirm')">confirm</button>
+					<td class='centerall'>
+					<img class='abutton' src="/assets/icons8-Ok-128.png" onClick="httpGet('/keypress/confirm')">
 					</td>
-					<td>
-					<button onClick="httpGet('/keypress/right')">Right</button>
+					<td class='centerall'>
+					<img class='abutton' src="/assets/icons8-Forward-100.png" onClick="httpGet('/keypress/right')">
 					</td>	
 				</tr>
 				<tr>
 					<td>
 					</td>
-					<td>
-					<button onClick="httpGet('/keypress/down')">Down</button>
+					<td class='centerall'>
+					<img class='abutton' src="/assets/icons8-ExpandArrow-100.png" onClick="httpGet('/keypress/down')">
 					</td>
 					<td>
 					</td>	
