@@ -5,9 +5,9 @@ import (
 
 	"fmt"
 	log "github.com/Sirupsen/logrus"
+	"github.com/czerwe/gobravia"
 	"github.com/gorilla/mux"
 	"github.com/jessevdk/go-flags"
-	"gobravia"
 	"html/template"
 	"net/http"
 	"os"
@@ -16,7 +16,7 @@ import (
 
 type Options struct {
 	Listenport int    `long:"listenport" env:"LISTENPORT" default:"4043" description:"Listening port"`
-	broadcast  string `long:"broadcast" short:"b" required:"True" env:"SUBNET" description:"subnet to send wol signal example: 192.168.0.255" default:"10.0.0.255"`
+	Broadcast  string `long:"broadcast" short:"b" required:"True" env:"SUBNET" description:"subnet to send wol signal example: 192.168.0.255" default:"10.0.0.255"`
 	Host       string `long:"BRAVIAIP" short:"i" required:"True" env:"BRAVIAIP" description:"Hostname or IP of Bravia TV"`
 	Pin        string `long:"pin" short:"p" required:"False" env:"PIN" description:"access pin set in TV" default:"0000"`
 	Mac        string `long:"mac" short:"m" required:"False" env:"MAC" description:"MAC" default:"FC:F1:52:72:52:5F"`
@@ -37,7 +37,7 @@ var (
 
 func main() {
 	// version = "v1.0.0"
-
+	fmt.Println(version)
 	_, err := flags.Parse(&opts)
 
 	if err != nil {
@@ -89,7 +89,7 @@ func main() {
 		"host":  opts.Host,
 		"pin":   opts.Pin,
 		"mac":   opts.Mac,
-		"bcast": opts.broadcast,
+		"bcast": opts.Broadcast,
 	}).Info("bravia data")
 
 	bravia = gobravia.GetBravia(opts.Host, opts.Pin, opts.Mac)
@@ -179,7 +179,7 @@ func Keypress(w http.ResponseWriter, req *http.Request) {
 				"key": vars["key"],
 			}).Debug("wakeup signal")
 
-			bravia.Poweron(opts.broadcast)
+			bravia.Poweron(opts.Broadcast)
 
 		} else {
 			log.WithFields(log.Fields{

@@ -1,7 +1,8 @@
 body {
   font-family: Helvetica, sans-serif;
   color: black;
-  padding: 40px 0; }
+  padding: 40px 0;
+}
 
 button {
   -webkit-border-radius: 10px;
@@ -12,28 +13,34 @@ button {
   border: 1px solid black;
   text-align: center;
   width: 80px;
-  height: 50px; }
+  height: 50px;
+}
 
 .outtable {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 #volbutton {
   border: none;
   width: 100px;
-  height: 100px; }
+  height: 100px;
+}
 
 .voldown {
-  background: url("/assets/icons8-LowVolume-96.png"); }
+  background: url("/assets/icons8-LowVolume-96.png");
+}
 
 .volup {
-  background: url("/assets/icons8-Speaker-96.png"); }
+  background: url("/assets/icons8-Speaker-96.png");
+}
 
 button {
   border: 1px solid black;
   text-align: center;
   width: 80px;
-  height: 50px; }
+  height: 50px;
+}
 
 .numbutton {
   -webkit-border-radius: 50px;
@@ -44,28 +51,35 @@ button {
   height: 100px;
   width: 100px;
   font-size: 1.5em;
-  background-color: #e6e6e6; }
+  background-color: #e6e6e6;
+}
 
 button:active {
   color: white;
-  background-color: black; }
+  background-color: black;
+}
 
 td {
   text-align: center;
-  vertical-align: center; }
+  vertical-align: center;
+}
 
 tr {
   text-align: center;
-  vertical-align: center; }
+  vertical-align: center;
+}
 
 .center {
-  text-align: center padding; }
+  text-align: center padding;
+}
 
 .abutton {
-  background-color: white; }
+  background-color: white;
+}
 
 .abutton:active {
-  background-color: black; }
+  background-color: black;
+}
 
 #arrbutton {
   -webkit-border-radius: 50px;
@@ -76,6 +90,7 @@ tr {
   height: 100px;
   width: 100px;
   font-size: 1.5em;
-  background-color: #e6e6e6; }
+  background-color: #e6e6e6;
+}
 
 /*# sourceMappingURL=layout.css.map */
